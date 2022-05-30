@@ -13,20 +13,37 @@ ws.on('open', () => {
 	}))
 	setTimeout(() => {
 		ws.send(JSON.stringify({
-		command: 'send',
-		channelName: 'test',
-		userName: 'jan',
-		message: 'Treść wiadomości'
-	}))
+			command: 'send',
+			channelName: 'test',
+			userName: 'jan',
+			message: 'Treść wiadomości'
+		}))
 	}, 1000)
 
 	setTimeout(() => {
 		ws.send(JSON.stringify({
-		command: 'leave',
-		channelName: 'test',
-		userName: 'jan',
-	}))
+			command: 'leave',
+			channelName: 'test',
+			userName: 'jan',
+		}))
 	}, 2000)
+	
+	setTimeout(() => {
+		ws.send(JSON.stringify({
+			command: 'create',
+			channelName: 'test',
+			userName: 'jan',
+		}))
+	}, 2500)
+	setTimeout(() => {
+		ws.send(JSON.stringify({
+			command: 'send',
+			channelName: 'test',
+			userName: 'jan',
+			message: 'Treść wiadomości'
+		}))
+	}, 3000)
+	
 })
 
 ws.on('message', (data) => {
@@ -42,11 +59,11 @@ ws2.on('open', () => {
 	}))
 	setTimeout(() => {
 		ws.send(JSON.stringify({
-		command: 'send',
-		channelName: 'test',
-		userName: 'jan2',
-		message: 'Treść wiadomości drugiej'
-	}))
+			command: 'send',
+			channelName: 'test',
+			userName: 'jan2',
+			message: 'Treść wiadomości drugiej'
+		}))
 	}, 1500)
 })
 
